@@ -1,5 +1,5 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   mode: 'development',
@@ -8,14 +8,30 @@ module.exports = {
   devServer: {
     static: './dist',
   },
-  plugins: [
-    new HtmlWebpackPlugin ({
-      title: 'Oishii',      
-    }),
-  ],
   output: {
-    filename: 'main.js',
+    filename: 'main.[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+  },
+  plugins: [new HtmlWebpackPlugin({
+    template: "./src/template.html",
+  })],
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: "sass-loader",
+              options: {
+                // prefer 'dart-sass'
+                implementation: require("sass"),
+            },
+          },
+        ],
+      },
+    ],
   },
 };
