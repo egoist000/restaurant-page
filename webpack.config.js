@@ -10,6 +10,7 @@ module.exports = {
   },
   output: {
     filename: 'main.[contenthash].js',
+    assetModuleFilename: 'imgs/[name][ext]',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
@@ -31,6 +32,21 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(ico)$/i,
+        type: 'asset',
+        generator: {
+          filename: './[name][ext]',
+        }
       },
     ],
   },

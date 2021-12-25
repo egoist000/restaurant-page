@@ -4,4 +4,129 @@ $color3: #D93D04;
 $color4: #F26835;
 $color5: #A63737;
 
-#content {color: $color1;}
+$main-font: 'Lato', sans-serif;
+$secondary-font: 'Pacifico', cursive;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $main-font;
+    margin: 0;
+    padding: 0;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    a {
+        text-decoration: none;
+    }
+}
+
+////////////////////////
+//   Header Section   //
+////////////////////////
+
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color2;
+    color: $color1;
+}
+
+.header-content {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    margin: 1rem;
+    min-width: 340px;
+    width: 900px;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 150px;
+    padding-right: 1rem;
+    img {
+        width: 60px;
+        min-width: 35px;
+        height: 100%;
+    }
+    h1 {
+        margin: 0;
+        font-size: 2em;
+        font-family: $secondary-font;
+    }
+}
+
+////////////////////////
+//     Navigation     //
+////////////////////////
+
+.nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0.3rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 250px;
+    min-width: 150px;
+    font-size: 1.1em;
+    .nav-item {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        flex-direction: column;
+        height: 50px;
+        user-select: none;
+        cursor: pointer;
+    }
+    .nav-item.active {
+        color: $color4;
+    }
+}
+
+////////////////////////
+//      Slideshow     //
+////////////////////////
+
+#slideshow {
+    flex: 1 0 auto;
+}
+
+////////////////////////
+//       Welcome      //
+////////////////////////
+
+#welcome {
+    flex: 1 0 auto;
+}
+
+////////////////////////
+//       Footer       //
+////////////////////////
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem;
+    font-size: 1.2em;
+    background-color: $color2;
+    color: $color1;
+    a {
+        color: $color1;
+    }
+    a:hover {
+        color: $color4;
+    }
+}
