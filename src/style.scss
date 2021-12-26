@@ -51,7 +51,7 @@ body {
     gap: 1rem;
     justify-content: space-between;
     margin: 1rem;
-    min-width: 340px;
+    min-width: 200px;
     width: 900px;
 }
 
@@ -60,7 +60,6 @@ body {
     align-items: center;
     gap: 0.5rem;
     max-width: 150px;
-    padding-right: 1rem;
     img {
         width: 60px;
         min-width: 35px;
@@ -147,7 +146,7 @@ body {
     align-self: center;
     justify-content: center;
     align-items: center;
-    margin: auto 0;
+    margin: auto 1rem;
     padding: 1rem;
     border-radius: 1rem;
     min-width: 50%;
@@ -222,14 +221,14 @@ body {
 //    Media queries   //
 ////////////////////////
 
-@media screen and (max-width: 710px) {
+@media screen and (max-width: 742px) {
     #about {
         .about-text {
             h1 {
-                font-size: 1.5em;
+                font-size: 1.8em;
             }
             p {
-                font-size: 1em;
+                font-size: 1.2em;
             }
         }
         .about-img {
@@ -237,17 +236,49 @@ body {
         }
     }
 
-    .slideshow-text h1 {font-size: 2.5em;}
+    .slideshow-text h1 {font-size: 3em;}
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 470px) {
     #about {
         .about-text {
             h1 {
-                font-size: 1.2em;
+                font-size: 1.4em;
             }
             p {
-                font-size: 0.7em;
+                font-size: 1.1em;
+            }
+        }
+        .about-img {
+            width: 100px;
+        }
+    }
+    .slideshow-text h1 {font-size: 2em;}
+}
+
+
+@media screen and (max-width: 338px) {
+    #header {
+        .header-logo {
+            h1 {
+                font-size: 1.5em;
+            }
+            img {
+                width: 35px;
+            }
+        }
+        .nav {
+            font-size: 0.8em;
+        }
+    }
+
+    #about {
+        .about-text {
+            h1 {
+                font-size: 1.1em;
+            }
+            p {
+                font-size: .8em;
             }
         }
         .about-img {
