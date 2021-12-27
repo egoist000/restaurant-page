@@ -1,6 +1,3 @@
-import "./style.scss";
-import startSlideShow from "./modules/slideshow";
+import initHome from "./modules/homepage";
 
-console.log("Hello, world!");
-
-startSlideShow();
+initHome();
