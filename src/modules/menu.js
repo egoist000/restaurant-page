@@ -44,7 +44,6 @@ function createSushiList() {
     container.setAttribute("id", "sushi-list");
     const items = getItems();
     items.forEach(sushi => {
-        console.table(sushi);
         const card = createSushiCard(sushi.imgsrc, sushi.alt, sushi.name, sushi.description);
         container.appendChild(card);
     });

@@ -10,8 +10,10 @@ function startSlideShow() {
         if(slideIndex > slides.length) {slideIndex = 1}
         slides[slideIndex - 1].classList.add("active");
         timeoutId = setTimeout(() => {
-            slides[slideIndex - 1].classList.remove("active")
-            setTimeout(slideShow, 500);
+            if(slides[slideIndex - 1] !== undefined) {
+                slides[slideIndex - 1].classList.remove("active")
+                setTimeout(slideShow, 500);
+            }
         }, 5000);
     }
 }

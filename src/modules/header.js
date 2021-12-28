@@ -3,6 +3,7 @@ import initHome from "./homepage";
 import initMenu from "./menu";
 import * as utilis from "./utilis";
 import { stopSlideShow } from "./slideshow";
+import initContact from "./contact";
 
 
 function cleanActiveFromNav() {
@@ -28,6 +29,12 @@ function createNav() {
         if(e.target.classList.contains("active")) {return;}
         cleanActiveFromNav();
         initHome();
+    })
+    contact.addEventListener("click", e => {
+        if(e.target.classList.contains("active")) {return;}
+        cleanActiveFromNav();
+        stopSlideShow();
+        initContact();
     })
     nav.appendChild(menu);
     nav.appendChild(home);

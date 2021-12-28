@@ -1,0 +1,78 @@
+@import "../style.scss";
+
+$card-bg-color: rgba(230, 191, 194, 0.6);
+
+.content-bg {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    background-image: url("../assets/sl-wong.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 auto;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: $card-bg-color;
+    width: 40%;
+    border-radius: 10%;
+    min-width: 250px;
+    margin: 2rem;
+    .logo {
+        width: 30%;
+        background-color: $color5;
+        border-radius: 50%;
+        padding: 1rem;
+        min-width: 100px;
+        max-width: 200px;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .contact-info {
+        padding: 0.5rem;
+        align-self: flex-start;
+        span {
+            color: $color5;
+            font-size: 1.1em;
+        }
+        h2 {
+            font-size: 1.3em;
+            margin: 0;
+        }
+    }
+    .social-medias {
+        display: flex;
+        justify-content: center;
+        gap: 0.4rem;
+        width: 100%;
+        margin-top: 0.8rem;
+        i {
+            color: $color5;
+        }
+        i:hover {
+            color: $color4;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .contact {
+        .contact-info {
+            h2 {font-size: 1.1em;}
+            san {font-size: 0.8em;}
+        }
+    }
+}
