@@ -1,3 +1,6 @@
+
+let timeoutId = undefined;
+
 function startSlideShow() {
     let slideIndex = 0;
     const slides = document.getElementsByClassName("slide");
@@ -6,11 +9,15 @@ function startSlideShow() {
         slideIndex++;
         if(slideIndex > slides.length) {slideIndex = 1}
         slides[slideIndex - 1].classList.add("active");
-        setTimeout(() => {
+        timeoutId = setTimeout(() => {
             slides[slideIndex - 1].classList.remove("active")
             setTimeout(slideShow, 500);
-        }, 5000)
+        }, 5000);
     }
+}
+
+export function stopSlideShow() {
+    clearTimeout(timeoutId);
 }
 
 export default startSlideShow;

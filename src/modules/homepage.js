@@ -1,5 +1,7 @@
-import "../style.scss";
+import "../styles/home.scss";
 import * as utilis from "./utilis";
+import createHeader from "./header";
+import createFooter from "./footer";
 import startSlideShow from "./slideshow";
 
 /* Images */
@@ -7,48 +9,8 @@ import Valeriaboltneva from "../assets/valeria-boltneva.jpg";
 import Emmanuelzua from "../assets/emmanuel-zua.jpg";
 import Rajeshtp from "../assets/rajesh-tp.jpg";
 import Chevanonphotography from "../assets/chevanon-photography.jpg";
-import Logo from "../assets/1f363.svg";
 
 const PLACEHOLDER_TEXT = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem eos iusto eveniet tenetur. A sequi sunt ipsa fugit sit, enim ducimus omnis! Iusto facilis facere pariatur quas aliquam atque quaerat!";
-
-function createNav() {
-    const nav = document.createElement("ul");
-    nav.classList.add("nav");
-    const menu = utilis.createNavItem("Menu", "menu", "fish");
-    const home = utilis.createNavItem("Home", "home", "home", true);
-    const contact = utilis.createNavItem("Contact", "contact", "address-book");
-    nav.appendChild(menu);
-    nav.appendChild(home);
-    nav.appendChild(contact);
-    return nav;
-}
-
-function createHeaderLogo() {
-    const headerLogo = document.createElement("div");
-    headerLogo.classList.add("header-logo");
-    const logo = utilis.createImg(Logo, "sushi-emoji");
-    const logoText = utilis.createHeaderTag("Oishii")
-    headerLogo.appendChild(logo);
-    headerLogo.appendChild(logoText);
-    return headerLogo;
-}
-
-function createHeaderContent() {
-    const headerContent = document.createElement("div");
-    headerContent.classList.add("header-content");
-    const logo = createHeaderLogo();
-    const nav = createNav();
-    headerContent.appendChild(logo);
-    headerContent.appendChild(nav);
-    return headerContent;
-}
-
-function createHeader() {
-    const header = document.createElement("div");
-    header.setAttribute("id", "header");
-    header.appendChild(createHeaderContent());
-    return header;
-}
 
 function createSlideShowText() {
     const slidesTextContainer = document.createElement("div");
@@ -114,12 +76,14 @@ function createAbout() {
 
 function initHome() {
     const content = document.getElementById("content");
+    content.innerHTML = "";
     const slideShow = createSlideShow();
     const about = createAbout();
-    const footer = utilis.createFooter();
+    const footer = createFooter();
     content.appendChild(slideShow);
     content.appendChild(about);
     content.appendChild(footer);
+    document.getElementById("home").classList.add("active");
     startSlideShow();
 }
 
